@@ -17,6 +17,26 @@
                <div class="col-4"/>
                <div class="col-4"/>
            </div>
+            <div class="row">
+                <div class="col-6">
+                     <Card title="'Props title'" content="'Props is working'"/>
+                    <Card title="state.cardTitle" content="state.cardContent"/>
+                    <div class="card d-inline-block m-3" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">my title</h5>
+                            <p class="card-text">
+                             this card is static but the above we made through component
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <t t-foreach="state.cards" t-as="card" t-key="card.id">
+                    <Card title="card.title" content="card.content"/>
+                    </t>
+                </div>
+
+            </div>
         </div>
     </t>
 
