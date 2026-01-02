@@ -16,4 +16,7 @@ export class Counter extends Component {
             this.props.onChange();
         }
     }
+    decrement(){
+        this.state.value--;
+    }
 }
