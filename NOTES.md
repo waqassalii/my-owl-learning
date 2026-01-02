@@ -26,3 +26,10 @@ Props Validation:
     Because of the prop link, this is actually executing incrementSum() inside the Playground.
     Parent Action: The incrementSum() method in playground.js runs and executes this.state.sum++.
     Re-render: Owl detects both state changes and updates the HTML for both the Counter number and the Total Sum automatically.
+
+9.In this exercise, onChange is the callback prop.
+    `onChange : {type : Function, optional : true} `
+    It is a "callback" because:
+    The Parent (Playground) passes a function to the Child (Counter).
+    The Child doesn't use it immediately. It "calls back" that function only when a specific event happens (the button click).
+    Think of it like giving a friend your phone number and saying, "Call me back when you finish the task." The phone number is the callback prop.

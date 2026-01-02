@@ -13,10 +13,13 @@ export class Counter extends Component {
         this.state.value++;
         // 2. If the parent passed a function, call it!
         if (this.props.onChange) {
-            this.props.onChange();
+            this.props.onChange(1);
         }
     }
     decrement(){
         this.state.value--;
+        if (this.props.onChange){
+            this.props.onChange(-1)
+        }
     }
 }

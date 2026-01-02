@@ -11,8 +11,8 @@ export class Playground extends Component {
     this.state = useState({sum:2})
     }
 //incrementSum method would be triggered by children components
-    incrementSum(){
-        this.state.sum++
+    incrementSum(value){
+        this.state.sum += value
     }
 
 }
