@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="awesome_owl.TodoItem">
+        <div class="p-2 border-bottom">
+            <t t-esc="props.todo.id"/>. <t t-esc="props.todo.description"/> . <t t-esc="props.todo.isCompleted"/>
+        </div>
+    </t>
+
+    <t t-name="awesome_owl.TodoList">
+        <div class="todo-list card shadow-sm m-2 p-3">
+            <h3>Todo List</h3>
+            <t t-foreach="todos" t-as="todo" t-key="todo.id">
+                <TodoItem todo="todo"/>
+            </t>
+        </div>
+    </t>
+</templates>
