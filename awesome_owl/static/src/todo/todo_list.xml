@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <templates xml:space="preserve">
+
     <t t-name="awesome_owl.TodoItem">
-        <div class="p-2 border-bottom">
-            <t t-esc="props.todo.id"/>. <t t-esc="props.todo.description"/> . <t t-esc="props.todo.isCompleted"/>
+        <div t-attf-class="p-2 border-bottom #{props.todo.isCompleted ? 'text-muted text-decoration-line-through' : ''}">
+            <input type="checkbox" t-att-checked="props.todo.isCompleted" t-on-change="onChange" class="me-2"/>
+            <t t-esc="props.todo.id"/>. <t t-esc="props.todo.description"/>
+            <span class="text-danger" t-on-click="() => props.removeTodo(props.todo.id)" style="cursor:pointer;">
+            <i class="fa fa-trash"/> </span>
         </div>
     </t>
 
@@ -16,7 +20,7 @@
                     t-on-keyup="addTodo"
             />
             <t t-foreach="todos" t-as="todo" t-key="todo.id">
-                <TodoItem todo="todo"/>
+                <TodoItem todo="todo" toggleState="(id) => this.toggleTodo(id)" removeTodo="(id) => this.removeTodo(id)"/>
             </t>
         </div>
     </t>

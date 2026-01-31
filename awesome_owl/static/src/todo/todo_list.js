@@ -25,4 +25,14 @@ export class TodoList extends Component {
             ev.target.value = ""; // Clear the input
         }
     }
+    toggleTodo(todoId) {
+    const todo = this.todos.find((t) => t.id === todoId);
+    if (todo) {
+        todo.isCompleted = !todo.isCompleted;
+    } }
+    removeTodo(todoId) {
+    // Keep only the todos that DO NOT match the clicked ID
+    this.todos.splice(0, this.todos.length, ...this.todos.filter(t => t.id !== todoId));
+    }
+
 }

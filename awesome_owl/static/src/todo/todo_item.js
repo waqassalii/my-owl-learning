@@ -10,5 +10,12 @@ export class TodoItem extends Component {
             type: Object,
             shape: { id: Number, description: String, isCompleted: Boolean },
         },
+        // This is the "phone line" to the parent Since the Parent (TodoList) owns the data,
+        //the Child (TodoItem) must "call" the Parent to ask for a change.
+        toggleState: { type: Function },
+        removeTodo: { type: Function },
     };
+    onChange() {
+        this.props.toggleState(this.props.todo.id);
+    }
 }

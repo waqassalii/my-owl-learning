@@ -32,3 +32,28 @@ Why ev.target?
     You don't need to define target because it is a built-in property of the event. It's like a return address on a letter;
     it tells the function exactly where the message came from so you can read the text inside (ev.target.value) or clear 
     it (ev.target.value = "").
+
+Why we do this (The "Data Flow")
+    User clicks checkbox in Child.
+    Child triggers onChange.
+    Child calls props.toggleState.
+    Parent runs toggleTodo, updates the useState list.
+    Owl sees the change and re-renders both components.
+
+REMOVING THE LIST EXPLANATION
+1. The filter part
+this.todos.filter(t => t.id !== todoId) This creates a brand new list containing every item except the one you want to delete.
+2. The ... (Spread Operator)
+This "unpacks" the list.
+If your filtered list is [Todo1, Todo2], the ... turns it into: Todo1, Todo2 (individual items).
+It’s like opening a box and taking the items out so they can be passed as separate arguments.
+3. The splice part
+this.todos.splice(0, this.todos.length, ...)
+0, this.todos.length: This tells JavaScript to "delete everything from index 0 to the end."
+... [filtered items]: This says "and immediately insert the new filtered items here."
+
+Example of splice
+    const tasks = ["Clean", "Cook", "Sleep"];
+    // At index 0, delete 1 item ("Clean"), and add "Work"
+    tasks.splice(0, 1, "Work");
+    console.log(tasks); // ["Work", "Cook", "Sleep"]
