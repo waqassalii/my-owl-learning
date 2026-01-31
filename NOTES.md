@@ -19,3 +19,16 @@ Why we use t-key
     When the list changes (e.g., you delete an item or reorder them), Owl uses the t-key to track which DOM element belongs to which data object.
     Without t-key: Owl would have to delete and recreate the entire list every time something changes. This is slow.
     With t-key: Owl only updates the specific item that changed. It "reconciles" the UI efficiently.
+
+Key Points to Remember
+    ev.keyCode === 13: This is the standard code for the "Enter" key.
+    this.todos.push(...): Because todos is wrapped in useState, Owl detects the push and automatically re-renders the list on your screen.
+    ev.target.value: This is how you grab the text currently sitting inside the input bo
+
+Why ev.target?
+    In JavaScript, whenever an event (like keyup) happens, the browser automatically creates an Event Object and passes it to your function. We named this object ev.
+    ev: The event itself (the "keypress" event).
+    ev.target: The specific HTML element that triggered the event. In this case, it is the <input> box.
+    You don't need to define target because it is a built-in property of the event. It's like a return address on a letter;
+    it tells the function exactly where the message came from so you can read the text inside (ev.target.value) or clear 
+    it (ev.target.value = "").
