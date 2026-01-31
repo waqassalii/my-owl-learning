@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="awesome_owl.Card">
+        <div class="container p-3">
+        <div class="card d-inline-block m-2" style="width: 18rem;">
+                <div class="card-body">
+                    <h3><t t-esc="props.title"/></h3>
+                    <p><t t-out="props.content"/></p>
+                    <p>the above content is passed through props from playground component to card component</p>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>
