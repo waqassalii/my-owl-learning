@@ -1,0 +1,55 @@
+# Compiled Python files
+*.pyc
+*.pyo
+*.egg-info
+__pycache__/
+
+# IDE and editor settings
+.vscode/
+.idea/
+*.DS_Store
+
+# Sphinx build directories
+_build/
+
+# Dotfiles (allow some to be tracked)
+.*
+!.gitignore
+!.github
+!.mailmap
+
+# Emacs backup files
+*~
+
+# Odoo-specific exclusions
+odoo/filestore/
+odoo/addons/base/maintenance/
+
+# Generated for Windows installer
+install/win32/*.bat
+install/win32/meta.py
+setup/win32/static/less/
+setup/win32/static/wkhtmltopdf/
+setup/win32/static/postgresql*.exe
+
+# JavaScript tooling
+node_modules/
+jsconfig.json
+tsconfig.json
+package-lock.json
+package.json
+.husky/
+
+# Virtual environments and build artifacts
+/bin/
+/build/
+/dist/
+/include/
+/lib/
+/man/
+/share/
+/src/
+
+# Version control conflict files
+*.orig
+status
