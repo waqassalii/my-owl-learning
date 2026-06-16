@@ -8,6 +8,10 @@
                         <Counter/>
                         <Counter/>
                     </div>
+                    <br/>
+                    <div class="row">
+                        <Card/>
+                    </div>
                 </div>
             </div>
     </t>

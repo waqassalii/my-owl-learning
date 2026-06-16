@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <t t-name="awesome_owl.Card">
+            <div class="text-center border border-danger text-white" >
+                <h1>i am card component</h1>
+            </div>
+    </t>
+</templates>
