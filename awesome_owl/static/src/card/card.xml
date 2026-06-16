@@ -1,8 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <templates>
     <t t-name="awesome_owl.Card">
-            <div class="text-center border border-danger text-white" >
-                <h1>i am card component</h1>
+        <div class="card-body text-center" >
+            <h4>Just added props</h4>
+            <p>
+                When you write Card title="'my title'" content="'some content'"/> <br/> in Playground — you're sending two values INTO the Card component. Card receives them and uses them.
+            </p>
+            <p>
+                so far we just passed the static data from parent to child through props
+            </p>
+        </div>
+        <div class="card d-inline-block mt-2" >
+            <div class="card-body">
+                <h5 class="card-title"><t t-esc="props.title"/></h5>
+                <p class="card-text">
+                   <t t-esc="props.content"/>
+                </p>
             </div>
+        </div>
     </t>
 </templates>

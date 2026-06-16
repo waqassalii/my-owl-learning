@@ -10,7 +10,8 @@
                     </div>
                     <br/>
                     <div class="row">
-                        <Card/>
+                       <Card title="'Props?'" content="'Props are just data you pass from parent to child through the tag,
+                        like attributes in HTML'"/>
                     </div>
                 </div>
             </div>
