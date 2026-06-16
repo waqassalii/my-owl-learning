@@ -1,0 +1,35 @@
+.playground-bg {
+  // A modern deep blue-purple gradient as background
+  // "linear-gradient" = smooth color transition from one color to another
+  // "135deg" = direction of gradient (diagonal)
+  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+}
+.counter-card {
+  background-color: #ffffff;
+  width: 260px;
+  // Smooth transition: when something changes (like hover),
+  // it animates over 0.3 seconds instead of jumping instantly
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  &:hover {
+    // Moves the card UP by 6 pixels → gives a "lift" effect
+    transform: translateY(-6px);
+    // Makes the shadow bigger and more blurred → looks elevated
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2) !important;
+  }
+}
+// =====================================================
+            // COUNTER TITLE
+// ========================================================
+.counter-title {
+  color: #6c757d;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.counter-value {
+  font-size: 4rem;
+  font-weight: 800;
+  color: #0f3460;
+  line-height: 1;
+}
