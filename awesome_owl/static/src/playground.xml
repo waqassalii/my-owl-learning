@@ -11,9 +11,25 @@
                     <Counter/>
                 </div>
             </div>
-            <div class="row mt-5">
-                <div class="col-12">
-                    <Card title="'Tesla Model S'" description="'Electric car with 670 hp'"/>
+            <div class="row ">
+                <div class="col-12 mt-5 d-flex flex-wrap gap-2 justify-content-center">
+                    <Card title="'Tesla Model S 1'" description="'Electric car with 670 hp , static props , no dynamic props'"/>
+                    <Card title="'Tesla Model S 2'" description="'Electric car with 670 hp , static props , no dynamic props'"/>
+                    <Card title="'Tesla Model S 3'" description="'Electric car with 670 hp , static props , no dynamic props'"/>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-12 mt-5 d-flex flex-wrap gap-2 justify-content-center">
+                    <CardDynamic t-props="carData"/>
+                    <CardDynamic title="carData.title" description="carData.description" price="carData.price" imageUrl="carData.imageUrl" isPopular="carData.isPopular" year="carData.year"/>
+                    <CardDynamic title="carData.title" description="carData.description" price="carData.price" imageUrl="carData.imageUrl" isPopular="carData.isPopular" year="carData.year"/>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-12 mt-5 d-flex flex-wrap gap-2 justify-content-center">
+                    <CardDynamic t-props="carData2"/>
+                    <CardDynamic t-props="carData2"/>
+                    <CardDynamic title="carData2.title" description="carData2.description" price="carData2.price" imageUrl="carData2.imageUrl" isPopular="carData2.isPopular" year="carData2.year"/>
                 </div>
             </div>
         </div>
