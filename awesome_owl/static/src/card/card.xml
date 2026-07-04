@@ -5,9 +5,8 @@
             <!-- Vehicle Image Area -->
             <div class="car-image-container">
                 <span class="car-badge">POPULAR</span>
-                <img src="https://unsplash.com" alt="Tesla Model S" class="car-image"/>
+                <img src="awesome_owl/static/description/tesla.jpg" alt="Tesla Model S" class="car-image"/>
             </div>
-
             <!-- Content Area -->
             <div class="car-details">
                 <div class="car-header">
@@ -16,7 +15,6 @@
                 </div>
 
                 <p class="car-description">Electric • 670 hp • Autopilot</p>
-
                 <!-- Pricing and Booking Button -->
                 <div class="car-footer">
                     <div class="car-price">
