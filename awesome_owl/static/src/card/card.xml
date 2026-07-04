@@ -1,32 +1,38 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <templates>
     <t t-name="awesome_owl.Card">
-        <div class="car-rental-card">
-            <!-- Vehicle Image Area -->
-            <div class="car-image-container">
-                <span class="car-badge">POPULAR</span>
-                <img src="awesome_owl/static/description/tesla.jpg" alt="Tesla Model S" class="car-image"/>
-            </div>
-            <!-- Content Area -->
-            <div class="car-details">
-                <div class="car-header">
-                    <h3 class="car-title">Tesla Model S</h3>
-                    <span class="car-year">2026</span>
-                </div>
-
-                <p class="car-description">Electric • 670 hp • Autopilot</p>
-                <!-- Pricing and Booking Button -->
-                <div class="car-footer">
-                    <div class="car-price">
-                        <span class="price-amount">$129</span>
-                        <span class="price-unit">/ day</span>
-                    </div>
-                    <button class="btn-rent">
-                        Rent Now <span class="icon">→</span>
-                    </button>
-                </div>
+        <div class="card" style="width: 18rem;">
+             <img src="awesome_owl/static/description/tesla.jpg" alt="Tesla Model S" class="car-image"/>
+            <div class="card-body">
+                <h5 class="card-title"><t t-esc="props.title"/></h5>
+                <p class="card-text"><t t-esc="props.description"/></p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
         </div>
-
+        <!-- <div class="car-rental-card">
+             &lt;!&ndash; Vehicle Image Area &ndash;&gt;
+             <div class="car-image-container">
+                 <span class="car-badge">POPULAR</span>
+                 <img src="awesome_owl/static/description/tesla.jpg" alt="Tesla Model S" class="car-image"/>
+             </div>
+             &lt;!&ndash; Content Area &ndash;&gt;
+             <div class="car-details">
+                 <div class="car-header">
+                     <h3 class="car-title">Tesla Model S</h3>
+                     <span class="car-year">2026</span>
+                 </div>
+                 <p class="car-description">Electric • 670 hp • Autopilot</p>
+                 &lt;!&ndash; Pricing and Booking Button &ndash;&gt;
+                 <div class="car-footer">
+                     <div class="car-price">
+                         <span class="price-amount">$129</span>
+                         <span class="price-unit">/ day</span>
+                     </div>
+                     <button class="btn-rent">
+                         Rent Now <span class="icon">→</span>
+                     </button>
+                 </div>
+             </div>
+         </div>-->
     </t>
 </templates>

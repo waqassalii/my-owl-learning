@@ -13,7 +13,7 @@
             </div>
             <div class="row mt-5">
                 <div class="col-12">
-                    <Card/>
+                    <Card title="'Tesla Model S'" description="'Electric car with 670 hp'"/>
                 </div>
             </div>
         </div>
