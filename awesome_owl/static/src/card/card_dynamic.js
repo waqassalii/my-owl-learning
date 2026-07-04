@@ -12,5 +12,8 @@ export class CardDynamic extends Component {
             isPopular: Boolean,
             year: Number,
         };
+    handleRent() {
+        alert(`You rented: ${this.props.title}`);
+    }
 }
 

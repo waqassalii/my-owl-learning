@@ -14,7 +14,7 @@
                     </span>
                 </div>
                 <p class="card-text mt-2 text-muted" t-esc="props.description"/>
-                <a href="#" class="btn btn-primary w-100 mt-2">
+                <a href="#" class="btn btn-primary w-100 mt-2" t-on-click="handleRent">
                     Rent Now →
                 </a>
             </div>
