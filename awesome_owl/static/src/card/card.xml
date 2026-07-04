@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <t t-name="awesome_owl.Card">
+        <div class="car-rental-card">
+            <!-- Vehicle Image Area -->
+            <div class="car-image-container">
+                <span class="car-badge">POPULAR</span>
+                <img src="https://unsplash.com" alt="Tesla Model S" class="car-image"/>
+            </div>
+
+            <!-- Content Area -->
+            <div class="car-details">
+                <div class="car-header">
+                    <h3 class="car-title">Tesla Model S</h3>
+                    <span class="car-year">2026</span>
+                </div>
+
+                <p class="car-description">Electric • 670 hp • Autopilot</p>
+
+                <!-- Pricing and Booking Button -->
+                <div class="car-footer">
+                    <div class="car-price">
+                        <span class="price-amount">$129</span>
+                        <span class="price-unit">/ day</span>
+                    </div>
+                    <button class="btn-rent">
+                        Rent Now <span class="icon">→</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </t>
+</templates>
