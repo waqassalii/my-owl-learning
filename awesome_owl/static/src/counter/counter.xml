@@ -1,24 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <templates>
     <t t-name="awesome_owl.Counter">
-            <div class="counter-card shadow rounded-4 p-4 text-center" >
-                <h5 class="counter-title mb-3"> Counter </h5>
-                <div class="counter-value mb-4">
-                    <t t-esc="state.value"/>
-                </div>
-                <div class="d-flex justify-content-center gap-2">
-                    <button
-                            class="btn btn-outline-danger rounded-pill px-4"
-                            t-on-click="decrement">
-                        − Decrement
-                    </button>
-                    <button
-                            class="btn btn-success rounded-pill px-4"
-                            t-on-click="increment">
-                        + Increment
-                    </button>
-                </div>
-
+        <div class="counter-card glass-card rounded-4 p-4 text-center position-relative overflow-hidden">
+            <div class="card-accent"></div>
+            <h5 class="counter-title mb-3">
+                <span class="badge-counter">✦</span> Counter
+            </h5>
+            <div class="counter-value mb-4">
+                <t t-esc="state.value"/>
             </div>
+            <div class="d-flex justify-content-center gap-3">
+                <button class="btn-counter btn-decrement rounded-pill px-4 py-2" t-on-click="decrement">
+                    <span class="icon">−</span> Decrease
+                </button>
+                <button class="btn-counter btn-increment rounded-pill px-4 py-2" t-on-click="increment">
+                    <span class="icon">+</span> Increase
+                </button>
+            </div>
+        </div>
     </t>
 </templates>
