@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <t t-name="awesome_owl.CardDynamic">
+        <div class="card" style="width: 18rem; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            <img t-att-src="props.imageUrl" t-att-alt="props.title" class="card-img-top" style="height: 200px; object-fit: cover;"/>
+            <div class="card-body">
+                <h5 class="card-title text-primary fw-bold" t-esc="props.title"/>
+                <div class="card-text">
+                    <span class="badge bg-secondary me-1" t-esc="props.year"/>
+                    <span class="badge bg-success me-1" t-esc="props.price"/>
+                    <span class="badge" t-attf-class="{{ props.isPopular ? 'bg-warning' : 'bg-info' }}">
+                        <t t-if="props.isPopular">⭐ Popular</t>
+                        <t t-else="">Standard</t>
+                    </span>
+                </div>
+                <p class="card-text mt-2 text-muted" t-esc="props.description"/>
+                <a href="#" class="btn btn-primary w-100 mt-2">
+                    Rent Now →
+                </a>
+            </div>
+        </div>
+    </t>
+</templates>
