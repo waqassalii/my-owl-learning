@@ -1,6 +1,6 @@
 /** @odoo-module **/
 
-import { Component } from "@odoo/owl";
+import { Component, useState } from "@odoo/owl";
 import { Counter } from "./counter/counter";
 import { Card } from "./card/card";
 import { CardDynamic } from "./card/card_dynamic";
@@ -9,6 +9,7 @@ export class Playground extends Component {
     static template = "awesome_owl.Playground";
     static components = { Counter, Card, CardDynamic };
     setup() {
+        this.sum = useState({ value: 0 });
         this.carData = {
             title: "Dodge Challenger",
             description: "High power car , nothing matches this",
@@ -26,4 +27,6 @@ export class Playground extends Component {
             isPopular: false,
         };
     }
+    incrementSum() {this.sum.value++;}
+    decrementSum() {this.sum.value--;}
 }
