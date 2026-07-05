@@ -8,15 +8,25 @@
                 <div class="card-text">
                     <span class="badge bg-secondary me-1" t-esc="props.year"/>
                     <span class="badge bg-success me-1" t-esc="props.price"/>
-                    <span class="badge" t-attf-class="{{ props.isPopular ? 'bg-warning' : 'bg-info' }}">
+                    <span class="badge me-1" t-attf-class="{{ props.isPopular ? 'bg-warning' : 'bg-info' }}">
                         <t t-if="props.isPopular">⭐ Popular</t>
                         <t t-else="">Standard</t>
                     </span>
+                    <span class="badge  bg-primary"  t-esc="count.value"/>
                 </div>
                 <p class="card-text mt-2 text-muted" t-esc="props.description"/>
-                <a href="#" class="btn btn-primary w-100 mt-2" t-on-click="handleRent">
+                <!--<a href="#" class="btn btn-primary w-100 mt-2" t-on-click="handleRent">
                     Rent Now →
-                </a>
+                </a>-->
+                <button class="custom-cart-btn add" t-on-click="addCart">
+                    <span class="icon">🛒</span>
+                    <span class="text">Add to Cart</span>
+                </button>
+                <button class="custom-cart-btn remove" t-on-click="removeCart">
+                    <span class="icon">✕</span>
+                    <span class="text">Remove</span>
+                    <span class="icon">🛒</span>
+                </button>
             </div>
         </div>
     </t>
