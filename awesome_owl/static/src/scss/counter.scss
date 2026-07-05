@@ -152,3 +152,25 @@
     border-color: rgba(139, 92, 246, 0.5);
   }
 }
+.sum-card {
+  background: #FFFFFF14;
+  backdrop-filter: blur(20px);
+  border: 1px solid #FFFFFF14;
+  box-shadow: 0 25px 50px -12px #00000080;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 30px 60px -15px #00000099;
+  }
+}
+
+.sum-value {
+  font-size: 3.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #F9957F, #F2F5D0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+}
