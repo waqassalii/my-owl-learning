@@ -26,6 +26,19 @@
                     <Counter id="'counter2'" onChange="updateSum"/>
                 </div>
             </div>
+            <div class="row w-100 justify-content-center mt-3">
+                <div class="col-md-4 col-12">
+                    <div class="sum-cart rounded-4 p-4 text-center">
+                        <div class="total-cart-badge">
+                            <span class="icon">🛒</span>
+                            <span>Total Cart</span>
+                        </div>
+                        <div class="cart-value mt-3">
+                           <span><t t-esc="cartSum.value"/></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- Static Cards -->
             <div class="row w-100 mt-5">
                 <div class="col-12 d-flex flex-wrap gap-3 justify-content-center">
@@ -37,17 +50,21 @@
             <!-- Dynamic Cards Row 1 -->
             <div class="row w-100 mt-4">
                 <div class="col-12 d-flex flex-wrap gap-3 justify-content-center">
-                    <CardDynamic t-props="carData"/>
-                    <CardDynamic title="carData.title" description="carData.description" price="carData.price" imageUrl="carData.imageUrl" isPopular="carData.isPopular" year="carData.year"/>
-                    <CardDynamic title="carData.title" description="carData.description" price="carData.price" imageUrl="carData.imageUrl" isPopular="carData.isPopular" year="carData.year"/>
+                    <CardDynamic t-props="carData" id="'cart4'" onChange="updateCart"/>
+                    <CardDynamic id="'cart5'" title="carData.title" description="carData.description"
+                                 price="carData.price" imageUrl="carData.imageUrl" isPopular="carData.isPopular"
+                                 year="carData.year" onChange="updateCart"/>
+                    <CardDynamic id="'cart6'" title="carData.title" description="carData.description"
+                                 price="carData.price" imageUrl="carData.imageUrl" isPopular="carData.isPopular"
+                                 year="carData.year" onChange="updateCart"/>
                 </div>
             </div>
             <!-- Dynamic Cards Row 2 -->
             <div class="row w-100 mt-4">
                 <div class="col-12 d-flex flex-wrap gap-3 justify-content-center">
-                    <CardDynamic t-props="carData2"/>
-                    <CardDynamic t-props="carData2"/>
-                    <CardDynamic title="carData2.title" description="carData2.description" price="carData2.price" imageUrl="carData2.imageUrl" isPopular="carData2.isPopular" year="carData2.year"/>
+                    <CardDynamic t-props="carData2" id="'cart1'" onChange="updateCart"/>
+                    <CardDynamic t-props="carData2" id="'cart2'" onChange="updateCart"/>
+                    <CardDynamic t-props="carData2" id="'cart3'" onChange="updateCart"/>
                 </div>
             </div>
         </div>
