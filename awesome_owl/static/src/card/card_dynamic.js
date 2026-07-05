@@ -21,13 +21,13 @@ export class CardDynamic extends Component {
         this.count.value++;
         if (this.props.onChange) {
             console.log("i am inside addCart ", this.props.id);
-            this.props.onChange(this.props.id, this.count.value);
+            this.props.onChange(this.props.id, this.count.value, this.props.price);
         }
     }
     removeCart(){
         if (this.count.value > 0) {
             this.count.value--;
-            if (this.props.onChange) { this.props.onChange(this.props.id, this.count.value) }
+            if (this.props.onChange) { this.props.onChange(this.props.id, this.count.value, this.props.price); }
         }else{
             alert('Abay Nikal gaii sari cart say bs kr....');
         }

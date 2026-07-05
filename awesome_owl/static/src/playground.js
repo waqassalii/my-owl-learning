@@ -16,14 +16,18 @@ export class Playground extends Component {
             counter1: 0,
             counter2: 0,
         };
-        this.cartValues = {
-            cart1: 0,
-            cart2: 0,
-            cart3: 0,
-            cart4: 0,
-            cart5: 0,
-            cart6: 0,
-        };
+        this.cartValues = useState({
+            cart1: {quantity: 0, total: 0},
+            cart2: {quantity: 0, total: 0},
+            cart3: {quantity: 0, total: 0},
+            cart4: {quantity: 0, total: 0},
+            cart5: {quantity: 0, total: 0},
+            cart6: {quantity: 0, total: 0},
+        });
+        this.cartSummary = useState({
+            totalQuantity: 0,
+            totalPrice: 0
+        });
         this.carData = {
             title: "Dodge Challenger",
             description: "High power car , nothing matches this",
@@ -48,9 +52,25 @@ export class Playground extends Component {
         const total = this.counterValues.counter1 + this.counterValues.counter2;
         this.sum.value = total;
     }
-    updateCart = (cartId, newValue) => {
-        this.cartValues[cartId] = newValue;
-        const total = this.cartValues.cart1 + this.cartValues.cart2 + this.cartValues.cart3 + this.cartValues.cart4 + this.cartValues.cart5 + this.cartValues.cart6;
+    updateCart = (cartId, quantity, price) => {
+        this.cartValues[cartId].quantity = quantity;
+        this.cartValues[cartId].total = quantity * price;
+        let totalQty = 0;
+        let totalPrice = 0;
+
+        for (let key in this.cartValues) {
+            totalQty += this.cartValues[key].quantity;
+            totalPrice += this.cartValues[key].total;
+        }
+
+        this.cartSummary.totalQuantity = totalQty;
+        this.cartSummary.totalPrice = totalPrice;
+        const total = this.cartValues.cart1.total +
+            this.cartValues.cart2.total +
+            this.cartValues.cart3.total +
+            this.cartValues.cart4.total +
+            this.cartValues.cart5.total +
+            this.cartValues.cart6.total;
         this.cartSum.value = total;
     }
 
