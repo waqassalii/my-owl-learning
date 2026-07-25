@@ -2,12 +2,18 @@
 <templates>
     <t t-name="awesome_owl.TodoList">
         <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item text-primary fw-bold">Todo List</li>
-                <t t-foreach="state.todos" t-as="todo" t-key="todo.id">
-                    <li class="list-group-item"><TodoItem todo="todo"/></li>
-                </t>
-            </ul>
+            <div class="col-12">
+                <input type="text"
+                       class="form-control mb-3"
+                       placeholder="Enter a new task"
+                       t-on-keyup="addTodo"/>
+                <ul class="list-group">
+                    <li class="list-group-item text-primary fw-bold">Todo List</li>
+                    <t t-foreach="state.todos" t-as="todo" t-key="todo.id">
+                        <li class="list-group-item"><TodoItem todo="todo"/></li>
+                    </t>
+                </ul>
+            </div>
         </div>
     </t>
 </templates>
