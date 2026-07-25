@@ -4,10 +4,12 @@ import {Component, useState} from "@odoo/owl";
 import {Counter} from "./counter/counter";
 import {Card} from "./card/card";
 import {CardDynamic} from "./card/card_dynamic";
+import {TodoList} from "./todo/todo";
+
 
 export class Playground extends Component {
     static template = "awesome_owl.Playground";
-    static components = {Counter, Card, CardDynamic};
+    static components = {Counter, Card, CardDynamic, TodoList};
 
     setup() {
         this.sum = useState({value: 0});
