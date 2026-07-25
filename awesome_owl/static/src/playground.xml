@@ -67,6 +67,11 @@
                     <CardDynamic t-props="carData2" id="'cart3'" onChange="updateCart"/>
                 </div>
             </div>
+             <div class="row w-100 mt-4">
+                <div class="col-12 d-flex flex-wrap gap-3 justify-content-center">
+                   <TodoList />
+                </div>
+            </div>
         </div>
     </t>
 </templates>
