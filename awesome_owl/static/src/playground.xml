@@ -34,7 +34,7 @@
                             <span>Total Cart</span>
                         </div>
                         <div class="cart-value mt-3">
-                           <span><t t-esc="cartSum.value"/></span>
+                            <span><t t-esc="cartSum.value"/></span>
                         </div>
                     </div>
                 </div>
@@ -45,6 +45,9 @@
                     <Card title="'Tesla Model S 1'" description="'Electric car with 670 hp , static props , no dynamic props'"/>
                     <Card title="'Tesla Model S 2'" description="'Electric car with 670 hp , static props , no dynamic props'"/>
                     <Card title="'Tesla Model S 3'" description="'Electric car with 670 hp , static props , no dynamic props'"/>
+                    <Card title="'Card with Description &amp; Counter'" description="'This description hides on click!'">
+                        <Counter id="'counter1'"/>
+                    </Card>
                 </div>
             </div>
             <!-- Dynamic Cards Row 1 -->
@@ -67,9 +70,9 @@
                     <CardDynamic t-props="carData2" id="'cart3'" onChange="updateCart"/>
                 </div>
             </div>
-             <div class="row w-100 mt-4">
+            <div class="row w-100 mt-4">
                 <div class="col-12 d-flex flex-wrap gap-3 justify-content-center">
-                   <TodoList />
+                    <TodoList />
                 </div>
             </div>
         </div>
