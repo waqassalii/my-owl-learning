@@ -2,7 +2,7 @@
 <templates>
     <t t-name="awesome_owl.TodoItem">
 <!--        <div t-att-class="{ 'text-muted text-decoration-line-through': props.todo.isCompleted }">-->
-        <div t-att-class="props.todo.isCompleted ? 'text-muted text-decoration-line-through' : 'text-info'">
+        <div t-att-class="props.todo.isCompleted ? 'text-muted text-decoration-line-through' : ''">
             <span t-esc="props.todo.id"/>.
             <span t-esc="props.todo.description"/>
             <span t-if="props.todo.isCompleted"> ✅</span>
