@@ -27,7 +27,13 @@ export class TodoList extends Component {
                 isCompleted: false,
             });
             input.value = '';  // Clear input
+            }
         }
     }
-}
+    toggleTodo = (todoId) => {
+    const todo = this.state.todos.find(t => t.id === todoId);
+    if (todo) {
+        todo.isCompleted = !todo.isCompleted;
+              }
+    }
 }

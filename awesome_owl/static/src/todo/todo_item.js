@@ -13,5 +13,9 @@ export class TodoItem extends Component {
                 isCompleted: Boolean,
             },
         },
+        onToggle: { type: Function, required: true }
     };
+     toggleTodo() {
+        this.props.onToggle(this.props.todo.id);
+    }
 }
