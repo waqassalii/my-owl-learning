@@ -3,6 +3,9 @@
     <t t-name="awesome_owl.TodoItem">
 <!--        <div t-att-class="{ 'text-muted text-decoration-line-through': props.todo.isCompleted }">-->
         <div t-att-class="props.todo.isCompleted ? 'text-muted text-decoration-line-through' : ''">
+             <input type="checkbox"
+                   t-att-checked="props.todo.isCompleted"
+                   t-on-change="toggleTodo"/>
             <span t-esc="props.todo.id"/>.
             <span t-esc="props.todo.description"/>
             <span t-if="props.todo.isCompleted"> ✅</span>

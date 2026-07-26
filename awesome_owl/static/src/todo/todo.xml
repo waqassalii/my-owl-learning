@@ -19,7 +19,7 @@
                     <ul class="todo-list list-unstyled">
                         <li class="list-group-item text-primary fw-bold">Todo List</li>
                         <t t-foreach="state.todos" t-as="todo" t-key="todo.id">
-                            <li class="todo-item"><TodoItem todo="todo"/></li>
+                            <li class="todo-item"><TodoItem todo="todo" onToggle="toggleTodo"/></li>
                         </t>
                     </ul>
                     <div class="todo-footer mt-3 text-center">
