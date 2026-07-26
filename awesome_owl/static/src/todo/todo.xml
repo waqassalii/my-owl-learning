@@ -12,7 +12,7 @@
                             <t t-esc="state.todos.length"/> tasks
                         </span>
                     </div>
-                    <input type="text"
+                    <input type="text"  t-ref="taskInput"
                            class="form-control mb-3"
                            placeholder="Enter a new task"
                            t-on-keyup="addTodo"/>

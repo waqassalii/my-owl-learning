@@ -1,6 +1,6 @@
 /** @odoo-module **/
 
-import { Component, useState } from "@odoo/owl";
+import { Component, useState, useRef, onMounted } from "@odoo/owl";
 import { TodoItem } from "./todo_item";
 
 export class TodoList extends Component {
@@ -10,6 +10,10 @@ export class TodoList extends Component {
     setup() {
          this.state = useState({todos: []});
          this.nextId = 1;
+         this.inputRef = useRef('taskInput');
+          onMounted(() => {
+            this.inputRef.el.focus();  // ✅ Auto-focus on load
+        });
     }
    addTodo(ev) {
     if (ev.keyCode === 13) {  // 13 is Enter key code
