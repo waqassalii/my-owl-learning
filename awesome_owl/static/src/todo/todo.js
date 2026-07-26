@@ -36,4 +36,10 @@ export class TodoList extends Component {
         todo.isCompleted = !todo.isCompleted;
               }
     }
+    removeTodo = (todoId) => {
+        const index = this.state.todos.findIndex(t => t.id === todoId);
+        if (index >= 0) {
+            this.state.todos.splice(index, 1);
+        }
+    }
 }
