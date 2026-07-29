@@ -4,12 +4,27 @@
     <t t-name="awesome_dashboard.AwesomeDashboard">
        <Layout display="display" className="'o_dashboard h-100'">
            <t t-set-slot="control-panel-additional-actions">
-                 <button class="btn btn-primary me-1" t-on-click="openCustomers">Customers</button>
+             <button class="btn btn-primary me-1" t-on-click="openCustomers">Customers</button>
                <button class="btn btn-primary" t-on-click="openLeads">Leads</button>
            </t>
-           <div>
-               My dashboard content goes here
-           </div>
+           <div class="my-dashboard-card container-fluid mt-2">
+                <div class="row g-4">
+                    <div class="col-12 col-xl-8">
+                        <div class="card shadow-sm">
+                            <div class="card-header bg-white border-bottom-0">
+                                <h5 class="mb-0">Dashboard</h5>
+                            </div>
+                            <div class="card-body text-muted">
+                                My dashboard content goes here
+                            </div>
+                        </div>
+                        <div class="col-12 col-xl-4">
+                            <span class="text-muted">Sidebar content will go here</span>
+                        </div>
+                     </div>
+                </div>
+            </div>
+
     </Layout>
     </t>
 
