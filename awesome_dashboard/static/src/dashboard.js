@@ -5,10 +5,12 @@ import { useService } from "@web/core/utils/hooks";
 // useService is an Odoo framework hook, so it belongs to Odoo's core modules, not OWL itself.
 import { registry } from "@web/core/registry";
 import { Layout } from "@web/search/layout";
+import { DashboardItem } from "./items/dashboard_item";
+
 
 class AwesomeDashboard extends Component {
     static template = "awesome_dashboard.AwesomeDashboard";
-    static components = { Layout };
+    static components = { Layout, DashboardItem };
 
     setup() {
          this.display = { controlPanel: {} };
