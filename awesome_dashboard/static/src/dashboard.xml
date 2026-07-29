@@ -58,6 +58,18 @@
                         <div class="text-muted fw-bold mb-2">T-Shirts by Size</div>
                         <PieChart t-if="statistics.orders_by_size" label="'T-Shirt Sizes'" data="statistics.orders_by_size"/>
                     </DashboardItem>
+
+                   <!-- Bar Chart -->
+                    <DashboardItem size="3">
+                        <div class="text-muted fw-bold mb-2">Orders (Bar Chart)</div>
+                        <AllChart t-if="statistics.orders_by_size" type="'bar'" label="'T-Shirt Sizes'" data="statistics.orders_by_size"/>
+                    </DashboardItem>
+
+                    <!-- Line Chart -->
+                    <DashboardItem size="3">
+                        <div class="text-muted fw-bold mb-2">Orders Trend (Line Chart)</div>
+                        <AllChart t-if="statistics.orders_by_size" type="'line'" label="'T-Shirt Sizes'" data="statistics.orders_by_size"/>
+                    </DashboardItem>
                </div>
                
 
