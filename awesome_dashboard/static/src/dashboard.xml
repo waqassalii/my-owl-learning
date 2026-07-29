@@ -91,6 +91,15 @@
                             <span>Footer content , with name slot</span>
                         </t>
                     </DashboardItem>
+                     <DashboardItem size="2">
+                        <div class="text-muted fw-bold mb-2">Orders Trend (Line Chart)</div>
+                           <AllChart t-if="statistics.orders_by_size" type="'scatter'" label="'T-Shirt Sizes'" data="statistics.orders_by_size"/>
+                           <t t-set-slot="size-slot">
+                            <span>Footer content , with name slot</span>
+                        </t>
+                    </DashboardItem>
+
+
                </div>
                
 
