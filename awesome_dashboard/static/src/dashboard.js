@@ -7,12 +7,13 @@ import { registry } from "@web/core/registry";
 import { Layout } from "@web/search/layout";
 import { DashboardItem } from "./items/dashboard_item";
 import { PieChart } from "./pie_chart/pie_chart";
+import { AllChart } from "./pie_chart/chart";
 
 
 
 class AwesomeDashboard extends Component {
     static template = "awesome_dashboard.AwesomeDashboard";
-    static components = { Layout, DashboardItem, PieChart };
+    static components = { Layout, DashboardItem, PieChart, AllChart };
 
     setup() {
          this.display = { controlPanel: {} };
