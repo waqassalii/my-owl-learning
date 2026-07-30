@@ -7,8 +7,8 @@ export class AllChart extends Component {
         static template = "awesome_dashboard.AllChart";
         static props = {
             type: { type: String, optional: true },//as we are going to pass different charts
-            label: String,
-            data: Object,
+            label: String || "",
+            data: Object || {},
         };
         setup() {
             this.canvasRef = useRef("allCanvas");

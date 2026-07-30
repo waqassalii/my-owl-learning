@@ -10,7 +10,6 @@ import { PieChart } from "./pie_chart/pie_chart";
 import { AllChart } from "./pie_chart/chart";
 
 
-
 class AwesomeDashboard extends Component {
     static template = "awesome_dashboard.AwesomeDashboard";
     static components = { Layout, DashboardItem, PieChart, AllChart };
@@ -21,6 +20,7 @@ class AwesomeDashboard extends Component {
          this.rpc = useService("rpc");
          // this.statistics = useState({});
          this.statistics = useState(useService("awesome_dashboard.statistics"));
+         this.items = registry.category("awesome_dashboard").getAll();
          // this.statsService = useService("awesome_dashboard.statistics");
          // onWillStart(async ()=>{
          //     const result = await this.statsService.loadStatistics();
