@@ -18,14 +18,8 @@ class AwesomeDashboard extends Component {
          this.display = { controlPanel: {} };
          this.action = useService("action");
          this.rpc = useService("rpc");
-         // this.statistics = useState({});
          this.statistics = useState(useService("awesome_dashboard.statistics"));
          this.items = registry.category("awesome_dashboard").getAll();
-         // this.statsService = useService("awesome_dashboard.statistics");
-         // onWillStart(async ()=>{
-         //     const result = await this.statsService.loadStatistics();
-         //    Object.assign(this.statistics, result);
-         //     });
 
 }
     openCustomers() {

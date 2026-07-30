@@ -11,18 +11,35 @@ itemsRegistry.add("average_quantity", {
     description: "Average t-shirts per order",
     Component: NumberCard,
     props: (data) => ({
-        title: "Average t-shirts per order",
-        value: data.average_quantity || 0,
+        title: "Average T-Shirts / Order",
+        value: data.total_amount ?? 0,
     }),
 });
+
+// this is how we debug the code in JS
+// put the debugger amd the browser will freeze execution here
+/*itemsRegistry.add("average_time", {
+    id: "average_time",
+    description: "Average time for an order",
+    Component: NumberCard,
+    props: (data) => {
+        // Highlight-start
+        debugger; // The browser will freeze execution here
+        // Highlight-end
+        return {
+            title: "Average Time (Hours)",
+            value: data.average_time ?? 0,
+        };
+    },
+});*/
 
 itemsRegistry.add("average_time", {
     id: "average_time",
     description: "Average time for an order",
     Component: NumberCard,
     props: (data) => ({
-        title: "Average time (hours)",
-        value: data.average_time || 0,
+        title: "Average Time (Hours)",
+        value: data.average_time ?? 0,
     }),
 });
 
@@ -31,8 +48,17 @@ itemsRegistry.add("nb_cancelled_orders", {
     description: "Cancelled orders",
     Component: NumberCard,
     props: (data) => ({
-        title: "Cancelled orders",
-        value: data.nb_cancelled_orders || 0,
+        title: "Cancelled Orders",
+        value: data.nb_cancelled_orders ?? 0,
+    }),
+});
+itemsRegistry.add("new_orders", {
+    id: "new_orders",
+    description: "New orders",
+    Component: NumberCard,
+    props: (data) => ({
+        title: "New Orders",
+        value: data.nb_new_orders ?? 0,
     }),
 });
 
@@ -40,10 +66,9 @@ itemsRegistry.add("orders_by_size", {
     id: "orders_by_size",
     description: "Orders by size",
     Component: PieChartCard,
+    size: 2,
     props: (data) => ({
-        title: "Orders by size",
+        title: "Orders by Size",
         data: data.orders_by_size ?? {},
     }),
 });
-
-

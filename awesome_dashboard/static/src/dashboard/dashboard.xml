@@ -8,7 +8,30 @@
                <button class="btn btn-primary" t-on-click="openLeads">Leads</button>
            </t>
            <div class="overflow-y-auto h-100">
-           <div class="row display-flex gap-2">
+               <div class="row d-flex flex-wrap gap-3 p-3">
+                   <t t-foreach="items" t-as="item" t-key="item.id">
+                        <DashboardItem size="item.size || 1">
+                            <t t-set="itemProp" t-value="item.props ? item.props(statistics) : {'data': statistics}"/>
+                            <t t-component="item.Component" t-props="itemProp" />
+                            <t t-set-slot="size-slot">
+                                <span>Footer content , with name slot</span>
+                            </t>
+                        </DashboardItem>
+                    </t>
+               </div>
+
+        </div>
+    </Layout>
+
+    </t>
+
+</templates>
+
+
+<!--##############################################################################################################
+        following is the hard coded cards we used before in this templates
+    ##############################################################################################################-->
+  <!-- <div class="row display-flex gap-2">
                <DashboardItem>
                     <h5>Card 1</h5>
                    <p>Standard size card content.</p>
@@ -16,7 +39,7 @@
                         <span>Footer content , with name slot</span>
                     </t>
                 </DashboardItem>
-               <!-- Card 2: Size 2 -->
+               &lt;!&ndash; Card 2: Size 2 &ndash;&gt;
                <DashboardItem size="2">
                     <h5>Card 2</h5>
                    <p>Double size card content.</p>
@@ -73,13 +96,13 @@
                        <PieChart t-if="statistics.orders_by_size" label="'T-Shirt Sizes'" data="statistics.orders_by_size"/>
                     </DashboardItem>
 
-                   <!-- Bar Chart -->
+                   &lt;!&ndash; Bar Chart &ndash;&gt;
                    <DashboardItem size="3">
                         <div class="text-muted fw-bold mb-2">Orders (Bar Chart)</div>
                        <AllChart t-if="statistics.orders_by_size" type="'bar'" label="'T-Shirt Sizes'" data="statistics.orders_by_size"/>
                     </DashboardItem>
 
-                   <!-- Line Chart -->
+                   &lt;!&ndash; Line Chart &ndash;&gt;
                    <DashboardItem size="3">
                         <div class="text-muted fw-bold mb-2">Orders Trend (Line Chart)</div>
                        <AllChart t-if="statistics.orders_by_size" type="'line'" label="'T-Shirt Sizes'" data="statistics.orders_by_size"/>
@@ -98,22 +121,4 @@
                             <span>Footer content , with name slot</span>
                         </t>
                     </DashboardItem>
-
-
-               </div>
-               <div class="row d-flex flex-wrap gap-3 p-3">
-                   <t t-foreach="items" t-as="item" t-key="item.id">
-                        <DashboardItem size="item.size || 1">
-                            <t t-set="itemProp" t-value="item.props ? item.props(statistics) : {'data': statistics}"/>
-                            <t t-component="item.Component" t-props="itemProp" />
-                        </DashboardItem>
-                    </t>
-               </div>
-               
-
-        </div>
-
-    </Layout>
-    </t>
-
-</templates>
+               </div>-->
