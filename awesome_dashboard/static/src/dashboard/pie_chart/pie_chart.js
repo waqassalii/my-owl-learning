@@ -2,6 +2,8 @@
 
 import { Component, onWillStart, onMounted, onWillUnmount, useRef } from "@odoo/owl";
 import { loadJS } from "@web/core/assets";
+import { useService } from "@web/core/utils/hooks";
+import { _t } from "@web/core/l10n/translation";
 
 export class PieChart extends Component {
     static template = "awesome_dashboard.PieChart";
@@ -14,6 +16,7 @@ export class PieChart extends Component {
         // useRef we used it to get HTML element
         this.canvasRef = useRef("canvas");
         let chart;
+        this.action = useService("action");
 
         // Lazy load Chart.js before the component renders
         onWillStart(async () => {
@@ -30,15 +33,43 @@ export class PieChart extends Component {
                         label: this.props.label,
                         data: Object.values(this.props.data),
                     }]
+                },
+                options: {
+                    onClick: (evt, activeElements) => {
+                        if (activeElements && activeElements.length > 0) {
+                            // Chart.js 2.x uses _index
+                            const index = activeElements[0]._index ?? activeElements[0].index;
+                            const sizeKeys = Object.keys(this.props.data);
+                            const selectedSize = sizeKeys[index];
+
+                            if (selectedSize) {
+                                this.openOrdersForSize(selectedSize);
+                            }
+                        }
+                    },
                 }
             });
         });
+
 
         // Clean up memory when the component is removed when it is removed from screen
         onWillUnmount(() => {
             if (chart) {
                 chart.destroy();
             }
+        });
+
+    }
+    openOrdersForSize(size) {
+        this.action.doAction({
+            type: "ir.actions.act_window",
+            name: _t("Orders"),
+            res_model: "sale.order",
+            views: [
+                [false, "list"],
+                [false, "form"],
+            ],
+            // domain: [["size", "=", size]],
         });
     }
 }

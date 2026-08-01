@@ -2,7 +2,7 @@
 <templates xml:space="preserve">
 
     <t t-name="awesome_dashboard.DashboardItem">
-        <div class="card shadow-sm " t-attf-style="width: {{ 18 * props.size }}rem;">
+        <div class="card shadow-sm  mobile-responsive" t-attf-style="width: {{ 18 * props.size }}rem;">
             <div class="card-header bg-white border-bottom-0 text-muted" >
                 <h3>dashboard items</h3>
             </div>

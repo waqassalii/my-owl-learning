@@ -2,7 +2,7 @@
 <templates xml:space="preserve">
 
     <t t-name="awesome_dashboard.ConfigurationDialog">
-        <Dialog title="'Dashboard Configuration'">
+        <Dialog title="title">
             <div class="d-flex flex-column gap-2">
                 <t t-foreach="props.items" t-as="item" t-key="item.id">
                     <div class="form-check">
