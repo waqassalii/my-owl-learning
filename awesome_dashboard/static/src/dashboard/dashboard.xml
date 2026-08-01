@@ -10,17 +10,32 @@
                 <i class="fa fa-cog"/>
                 </button>
            </t>
+           <div class="p-4 border-bottom bg-white">
+                <h4 class="mb-0 fw-bold">
+                    <i class="fa fa-tachometer me-2 text-primary"></i>
+                    Dashboard
+                </h4>
+               <p class="text-muted mt-1 mb-0">Welcome! Here's your business overview.</p>
+            </div>
            <div class="overflow-y-auto h-100">
                <div class="row d-flex flex-wrap gap-3 p-3">
                    <t t-foreach="items" t-as="item" t-key="item.id">
+                    <div class="col-2">
                         <DashboardItem size="item.size || 1">
-                            <t t-set="itemProp" t-value="item.props ? item.props(statistics) : {'data': statistics}"/>
-                            <t t-component="item.Component" t-props="itemProp" />
-                            <t t-set-slot="size-slot">
-                                <span>Footer content , with name slot</span>
-                            </t>
+                            <div class="card shadow-md" style="min-height: 200px;">
+                                <div class="card-body">
+                                    <t t-set="itemProp"
+                                       t-value="item.props ? item.props(statistics) : {'data': statistics}"/>
+                                    <t t-component="item.Component" t-props="itemProp"/>
+                                </div>
+                                    <t t-set-slot="size-slot">
+                                        <span>Footer content , with name slot</span>
+                                    </t>
+                            </div>
                         </DashboardItem>
-                    </t>
+
+                    </div>
+                </t>
                </div>
 
         </div>

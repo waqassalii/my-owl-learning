@@ -1,0 +1,57 @@
+@media (max-width: 768px) {
+     .mobile-responsive, .o_dashboard {
+        width: 100% !important;
+    }
+}
+.o_dashboard {
+    background-color: #f8f9fa;
+    .card-body {
+        h2, .h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.25rem;
+        }
+
+        .text-muted {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+    }
+    .card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+            &:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 8px 25px #0000001a !important;
+            }
+        }
+}
+.o_dashboard {
+    .card {
+        // ... your previous styles ...
+        border-left: 4px solid #714B67;  // Odoo's primary purple
+
+        // Different colors for different card types (optional)
+        &.card-primary {
+            border-left-color: #714B67;  // Odoo purple
+        }
+
+        &.card-success {
+            border-left-color: #28a745;  // Green
+        }
+
+        &.card-warning {
+            border-left-color: #ffc107;  // Yellow
+        }
+
+        &.card-danger {
+            border-left-color: #dc3545;  // Red
+        }
+
+        &.card-info {
+            border-left-color: #17a2b8;  // Blue
+        }
+    }
+}
