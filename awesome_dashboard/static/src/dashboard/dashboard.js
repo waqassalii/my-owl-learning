@@ -7,6 +7,7 @@ import { browser } from "@web/core/browser/browser";
 import { Layout } from "@web/search/layout";
 import { DashboardItem } from "./items/dashboard_item";
 import { ConfigurationDialog } from "./configuration_dialog/configuration_dialog";
+import { _t } from "@web/core/l10n/translation";
 
 class AwesomeDashboard extends Component {
     static template = "awesome_dashboard.AwesomeDashboard";
@@ -54,7 +55,7 @@ class AwesomeDashboard extends Component {
     openLeads() {
         this.action.doAction({
             type: "ir.actions.act_window",
-            name: "Leads",
+            name: _t("Leads"),
             res_model: "crm.lead",
             views: [
                 [false, "list"],
