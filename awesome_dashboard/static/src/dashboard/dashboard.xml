@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+    <t t-name="awesome_dashboard.AwesomeDashboard">
+       <Layout display="display" className="'o_dashboard h-100'">
+           <t t-set-slot="control-panel-additional-actions">
+                 <button class="btn btn-primary me-1" t-on-click="openCustomers">Customers</button>
+               <button class="btn btn-primary" t-on-click="openLeads">Leads</button>
+               <button class="btn btn-outline-secondary me-1" t-on-click="openConfiguration">
+                <i class="fa fa-cog"/>
+                </button>
+           </t>
+           <div class="p-4 border-bottom bg-white">
+                <h4 class="mb-0 fw-bold">
+                    <i class="fa fa-tachometer me-2 text-primary"></i>
+                    Dashboard
+                </h4>
+               <p class="text-muted mt-1 mb-0">Welcome! Here's your business overview.</p>
+            </div>
+           <div class="overflow-y-auto h-100">
+               <div class="row d-flex flex-wrap gap-3 p-3">
+                   <t t-foreach="items" t-as="item" t-key="item.id">
+                    <div class="col-2">
+                        <DashboardItem size="item.size || 1">
+                            <div class="card shadow-md" style="min-height: 200px;">
+                                <div class="card-body">
+                                    <t t-set="itemProp"
+                                       t-value="item.props ? item.props(statistics) : {'data': statistics}"/>
+                                    <t t-component="item.Component" t-props="itemProp"/>
+                                </div>
+                                    <t t-set-slot="size-slot">
+                                        <span>Footer content , with name slot</span>
+                                    </t>
+                            </div>
+                        </DashboardItem>
+
+                    </div>
+                </t>
+               </div>
+
+        </div>
+    </Layout>
+
+    </t>
+
+</templates>
+
+
+        <!--##############################################################################################################
+                following is the hard coded cards we used before in this templates
+            ##############################################################################################################-->
+        <!-- <div class="row display-flex gap-2">
+                     <DashboardItem>
+                          <h5>Card 1</h5>
+                         <p>Standard size card content.</p>
+                         <t t-set-slot="size-slot">
+                              <span>Footer content , with name slot</span>
+                          </t>
+                      </DashboardItem>
+                     &lt;!&ndash; Card 2: Size 2 &ndash;&gt;
+                     <DashboardItem size="2">
+                          <h5>Card 2</h5>
+                         <p>Double size card content.</p>
+                         <t t-set-slot="size-slot">
+                              <span>Footer content , with name slot</span>
+                          </t>
+                      </DashboardItem>
+                     <DashboardItem size="2">
+                              <div class="text-muted fw-bold mb-2">Orders Trend (Line Chart)</div>
+                         <AllChart t-if="statistics.orders_by_size" type="'line'" label="'T-Shirt Sizes'" data="statistics.orders_by_size"/>
+                         <t t-set-slot="size-slot">
+                          <span>Footer content , with name slot</span>
+                      </t>
+                      </DashboardItem>
+                      <DashboardItem size="0.8">
+                              <div class="text-muted fw-bold mb-2">Orders Trend (Line Chart)</div>
+                         <AllChart t-if="statistics.orders_by_size" type="'doughnut'" label="'T-Shirt Sizes'" data="statistics.orders_by_size"/>
+                         <t t-set-slot="size-slot">
+                          <span>Footer content , with name slot</span>
+                      </t>
+                      </DashboardItem>
+                 </div>
+                     <div class="row d-flex flex-wrap gap-3 p-3">
+
+                      <DashboardItem>
+                          <div class="text-muted">New Orders (This Month)</div>
+                          <h2><t t-esc="statistics.nb_new_orders"/></h2>
+                      </DashboardItem>
+
+                         <DashboardItem>
+                          <div class="text-muted">Total Amount</div>
+                             <h2>$<t t-esc="statistics.total_amount"/></h2>
+                      </DashboardItem>
+
+                         <DashboardItem>
+                          <div class="text-muted">Average T-shirts / Order</div>
+                             <h2><t t-esc="statistics.average_quantity"/></h2>
+                      </DashboardItem>
+
+                         <DashboardItem>
+                          <div class="text-muted">Cancelled Orders</div>
+                             <h2><t t-esc="statistics.nb_cancelled_orders"/></h2>
+                      </DashboardItem>
+
+                         <DashboardItem size="2">
+                          <div class="text-muted">Average Time (New to Sent/Cancelled)</div>
+                             <h2><t t-esc="statistics.average_time"/> Hours</h2>
+                      </DashboardItem>
+
+                  </div>
+                     <div class="row d-flex flex-wrap gap-3 p-3">
+                         <DashboardItem size="3">
+                              <div class="text-muted fw-bold mb-2">T-Shirts by Size</div>
+                             <PieChart t-if="statistics.orders_by_size" label="'T-Shirt Sizes'" data="statistics.orders_by_size"/>
+                          </DashboardItem>
+
+                         &lt;!&ndash; Bar Chart &ndash;&gt;
+                         <DashboardItem size="3">
+                              <div class="text-muted fw-bold mb-2">Orders (Bar Chart)</div>
+                             <AllChart t-if="statistics.orders_by_size" type="'bar'" label="'T-Shirt Sizes'" data="statistics.orders_by_size"/>
+                          </DashboardItem>
+
+                         &lt;!&ndash; Line Chart &ndash;&gt;
+                         <DashboardItem size="3">
+                              <div class="text-muted fw-bold mb-2">Orders Trend (Line Chart)</div>
+                             <AllChart t-if="statistics.orders_by_size" type="'line'" label="'T-Shirt Sizes'" data="statistics.orders_by_size"/>
+                          </DashboardItem>
+                          <DashboardItem size="2">
+                              <div class="text-muted fw-bold mb-2">Orders Trend (Line Chart)</div>
+                                 <AllChart t-if="statistics.orders_by_size" type="'doughnut'" label="'T-Shirt Sizes'" data="statistics.orders_by_size"/>
+                                 <t t-set-slot="size-slot">
+                                  <span>Footer content , with name slot</span>
+                              </t>
+                          </DashboardItem>
+                           <DashboardItem size="2">
+                              <div class="text-muted fw-bold mb-2">Orders Trend (Line Chart)</div>
+                                 <AllChart t-if="statistics.orders_by_size" type="'scatter'" label="'T-Shirt Sizes'" data="statistics.orders_by_size"/>
+                                 <t t-set-slot="size-slot">
+                                  <span>Footer content , with name slot</span>
+                              </t>
+                          </DashboardItem>
+                     </div>-->

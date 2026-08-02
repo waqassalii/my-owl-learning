@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+    <t t-name="awesome_dashboard.DashboardItem">
+        <div class="card shadow-sm card-success mobile-responsive" t-attf-style="width: {{ 18 * props.size }}rem;">
+            <div class="card-header bg-white border-bottom-0 text-muted" >
+                <h2>dashboard items</h2>
+            </div>
+            <div class="card-body border-bottom">
+                <t t-slot="default"/>
+            </div>
+            <div class="card-footer border-bottom pb-2 mb-2 text-primary">
+                <t t-slot="size-slot"/>
+            </div>
+        </div>
+
+    </t>
+
+</templates>
