@@ -1,0 +1,80 @@
+// =====================================================
+// TODO CARD - Purple/Indigo Theme
+// =====================================================
+.todo-card {
+  background: linear-gradient(145deg, #4b6043, #ddead1);
+  backdrop-filter: blur(20px);
+  border: 1px solid #FFFFFF14;
+  box-shadow: 0 25px 50px -12px #00000080;
+  // Every transition is smooth else we have to define separately for transform and box-shadow etc
+  transition: all 0.3s ease;
+
+  &:hover {
+      // Lift effect
+    transform: translateY(-4px);
+    box-shadow: 0 30px 60px -15px #00000099;
+  }
+}
+
+.todo-icon {
+  font-size: 1.8rem;
+  color: #A78BFA;
+}
+
+.todo-count {
+  background: #6fc276;
+  color: #FFFFFF;
+  padding: 4px 14px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+// =====================================================
+// INPUT GROUP - Purple Theme
+// =====================================================
+.todo-input {
+  background: #FFFFFF0D;
+  border: 1px solid #FFFFFF20;
+  border-radius: 50px 0 0 50px;
+  color: #FFFFFF;
+  padding: 12px 20px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+
+  &::placeholder {
+    color: #FFFFFF60;
+  }
+
+  &:focus {
+    background: #FFFFFF15;
+    border-color: #A78BFA;
+    box-shadow: 0 0 0 3px #A78BFA40;
+    outline: none;
+    color: #FFFFFF;
+  }
+}
+
+
+.todo-item {
+  background: #balck;
+  border: 1px solid #FFFFFF10;
+  border-radius: 12px;
+  padding: 10px 16px;
+  margin-bottom: 8px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: #A78BFA20;
+    transform: translateX(10px)  scale(1.2);
+    border-color: #A78BFA60;
+  }
+}
+
+.todo-footer {
+  border-top: 1px solid #FFFFFF10;
+  padding-top: 12px;
+  color: #A78BFA80;
+}
+
+

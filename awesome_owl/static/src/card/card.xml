@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <t t-name="awesome_owl.Card">
+        <div class="card" style="width: 18rem;">
+             <img src="awesome_owl/static/description/tesla.jpg" alt="Tesla Model S" class="car-image"/>
+            <div class="card-header">
+                <button class="btn btn-sm btn-outline-secondary" t-on-click="toggleContent">
+                    <i t-att-class="state.isOpen ? 'fa fa-chevron-up' : 'fa fa-chevron-down'"/>
+                </button>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title"><t t-esc="props.title"/></h5>
+                <p class="card-text"><t t-esc="props.description"/></p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+            <div class="card-footer" t-if="state.isOpen">
+                    <t t-slot="default"/>
+            </div>
+        </div>
+    </t>
+</templates>

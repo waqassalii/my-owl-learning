@@ -1,10 +1,80 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<templates xml:space="preserve">
-
-    <t t-name="awesome_owl.playground">
-        <div class="p-3">
-            hello world
+<templates>
+    <t t-name="awesome_owl.Playground">
+        <div class="container playground-bg min-vh-100 d-flex flex-column align-items-center justify-content-center">
+            <!-- Header -->
+            <div class="text-center">
+                <h2 class="mb-4 fw-bold text-white" style="letter-spacing: 4px; font-size: 2.5rem; text-shadow: 0 2px 15px rgba(0,0,0,0.3);">
+                    ✦ Counter Studio ✦
+                </h2>
+            </div>
+            <!-- Sum Card -->
+            <div class="row w-100 justify-content-center">
+                <div class="col-md-4 col-12">
+                    <div class="sum-card glass-card rounded-4 p-4 text-center">
+                        <h5 class="counter-title mb-2">Total Sum</h5>
+                        <div class="sum-value">
+                            <t t-esc="sum.value"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Counters -->
+            <div class="row w-100 mt-4">
+                <div class="col-12 d-flex flex-wrap gap-4 justify-content-center">
+                    <Counter id="'counter1'" onChange="updateSum"/>
+                    <Counter id="'counter2'" onChange="updateSum"/>
+                </div>
+            </div>
+            <div class="row w-100 justify-content-center mt-3">
+                <div class="col-md-4 col-12">
+                    <div class="sum-cart rounded-4 p-4 text-center">
+                        <div class="total-cart-badge">
+                            <span class="icon">🛒</span>
+                            <span>Total Cart</span>
+                        </div>
+                        <div class="cart-value mt-3">
+                            <span><t t-esc="cartSum.value"/></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Static Cards -->
+            <div class="row w-100 mt-5">
+                <div class="col-12 d-flex flex-wrap gap-3 justify-content-center">
+                    <Card title="'Tesla Model S 1'" description="'Electric car with 670 hp , static props , no dynamic props'"/>
+                    <Card title="'Tesla Model S 2'" description="'Electric car with 670 hp , static props , no dynamic props'"/>
+                    <Card title="'Tesla Model S 3'" description="'Electric car with 670 hp , static props , no dynamic props'"/>
+                    <Card title="'Card with Description &amp; Counter'" description="'This description hides on click!'">
+                        <Counter id="'counter1'"/>
+                    </Card>
+                </div>
+            </div>
+            <!-- Dynamic Cards Row 1 -->
+            <div class="row w-100 mt-4">
+                <div class="col-12 d-flex flex-wrap gap-3 justify-content-center">
+                    <CardDynamic t-props="carData" id="'cart4'" onChange="updateCart"/>
+                    <CardDynamic id="'cart5'" title="carData.title" description="carData.description"
+                                 price="carData.price" imageUrl="carData.imageUrl" isPopular="carData.isPopular"
+                                 year="carData.year" onChange="updateCart"/>
+                    <CardDynamic id="'cart6'" title="carData.title" description="carData.description"
+                                 price="carData.price" imageUrl="carData.imageUrl" isPopular="carData.isPopular"
+                                 year="carData.year" onChange="updateCart"/>
+                </div>
+            </div>
+            <!-- Dynamic Cards Row 2 -->
+            <div class="row w-100 mt-4">
+                <div class="col-12 d-flex flex-wrap gap-3 justify-content-center">
+                    <CardDynamic t-props="carData2" id="'cart1'" onChange="updateCart"/>
+                    <CardDynamic t-props="carData2" id="'cart2'" onChange="updateCart"/>
+                    <CardDynamic t-props="carData2" id="'cart3'" onChange="updateCart"/>
+                </div>
+            </div>
+            <div class="row w-100 mt-4">
+                <div class="col-12 d-flex flex-wrap gap-3 justify-content-center">
+                    <TodoList />
+                </div>
+            </div>
         </div>
     </t>
-
 </templates>

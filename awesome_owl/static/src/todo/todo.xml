@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <t t-name="awesome_owl.TodoList">
+        <div class="row">
+            <div class="col-12">
+                <div class="todo-card rounded-4 p-4">
+                    <!-- Header -->
+                    <div class="d-flex align-items-center gap-3 mb-4">
+                        <span class="todo-icon">✓</span>
+                        <h4 class="text-white fw-bold mb-0">My Tasks</h4>
+                        <span class="todo-count ms-auto">
+                            <t t-esc="state.todos.length"/> tasks
+                        </span>
+                    </div>
+                    <input type="text"  t-ref="taskInput"
+                           class="form-control mb-3"
+                           placeholder="Enter a new task"
+                           t-on-keyup="addTodo"/>
+                    <ul class="todo-list list-unstyled">
+                        <li class="list-group-item text-primary fw-bold">Todo List</li>
+                        <t t-foreach="state.todos" t-as="todo" t-key="todo.id">
+                            <li class="todo-item"><TodoItem todo="todo" onToggle="toggleTodo" removeTodo="removeTodo"/></li>
+                        </t>
+                    </ul>
+                    <div class="todo-footer mt-3 text-center">
+                        <span class="text-muted" style="font-size: 0.8rem;">
+                            <t t-if="state.todos.length == 0">✨ No tasks yet. Add one above!</t>
+                            <t t-else="">🎯 Keep going! You got this!</t>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>
